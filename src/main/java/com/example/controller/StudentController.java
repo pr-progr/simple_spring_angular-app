@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Student;
-import com.example.repositoory.StudentRepository;
+import com.example.service.StudentService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")
 public class StudentController {
 	
-	private final StudentRepository studentRepository;
-
-	public StudentController(StudentRepository studentRepository) {
-		this.studentRepository = studentRepository;
-	}
+	private final StudentService studentService;
 	
+	public StudentController(StudentService studentService) {
+		this.studentService = studentService;
+	}
+
 	@GetMapping(value = "/students")
 	public List<Student> getList() {
-		return (List<Student>) studentRepository.findAll();
+		return (List<Student>) studentService.getStudents();
 	}
 
 	@PostMapping(value = "/students")
 	public void save(@RequestBody Student student) {
-		studentRepository.save(student);
+		studentService.saveOrUpdate(student);
 	}
 }
