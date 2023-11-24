@@ -1,0 +1,16 @@
+server:
+    port: 8081
+
+spring:
+  application:
+    name: GestioneUtenti
+  datasource:
+    password: test
+    url: jdbc:mysql://localhost:3306/realt
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+ 
+          
