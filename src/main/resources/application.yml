@@ -1,0 +1,19 @@
+server:
+  port: 8019
+spring:
+  application:
+    name: GestUser
+  datasource:
+    password: Osho??78
+    url: jdbc:mysql://localhost:3306/utenti
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+  security:
+    user:
+      name: Admin
+      password: Admin
+      roles:
+      - ADMIN
