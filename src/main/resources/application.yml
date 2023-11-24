@@ -4,7 +4,7 @@ spring:
   application:
     name: GestUser
   datasource:
-    password: Osho??78
+    password: test
     url: jdbc:mysql://localhost:3306/utenti
     username: root
   jpa:
